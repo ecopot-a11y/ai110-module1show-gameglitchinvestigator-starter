@@ -74,3 +74,19 @@
 **Which did you prefer and why?**
 
 <!-- Your conclusion -->
+
+## Challenge 1: Advanced Edge-Case Testing
+
+### Prompt Used
+
+> Generate a suite of pytest cases for three edge cases in my Streamlit number guessing game. Test a negative number, a decimal input, and an extremely large number using the existing `parse_guess()` and `check_guess()` functions. Keep the tests simple and consistent with the current behavior of the application.
+
+### Edge Cases
+
+- **Negative number (`-5`)** — Chosen to verify that numeric input outside the normal game range can be parsed without crashing the application.
+- **Decimal (`40.5`)** — Chosen to verify how `parse_guess()` handles numeric input that is not already a whole number.
+- **Extremely large number (`999999999`)** — Chosen to verify that the comparison logic still correctly identifies a value far above the secret as `Too High`.
+
+### Verification
+
+The first edge-case test run exposed an unfinished refactor because `parse_guess()` in `logic_utils.py` still raised `NotImplementedError`. After completing the `parse_guess()` refactor, I reran the complete test suite. All seven tests passed, including the three new edge-case tests.

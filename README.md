@@ -46,11 +46,6 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 
 ## 🧪 Test Results
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
-```
 ========================= test session starts ==========================
 platform win32 -- Python 3.13.7, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\COD\Documents\AI110\ai110-module1show-gameglitchinvestigator-starter\.venv\Scripts\python.exe
 cachedir: .pytest_cache
@@ -64,6 +59,26 @@ tests/test_game_logic.py::test_guess_just_above_secret_is_too_high PASSED [100%]
 
 ========================== 4 passed in 1.67s ===========================
 
+## 🧪 Test Results
+
+```text
+================= test session starts =================
+platform win32 -- Python 3.13.7, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\COD\Documents\AI110\ai110-module1show-gameglitchinvestigator-starter\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\COD\Documents\AI110\ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.15.1
+collected 7 items
+
+tests/test_game_logic.py::test_winning_guess PASSED [ 14%]
+tests/test_game_logic.py::test_guess_too_high PASSED [ 28%]
+tests/test_game_logic.py::test_guess_too_low PASSED [ 42%]
+tests/test_game_logic.py::test_guess_just_above_secret_is_too_high PASSED [ 57%]
+tests/test_game_logic.py::test_negative_number_is_parsed PASSED [ 71%]
+tests/test_game_logic.py::test_decimal_input_is_handled PASSED [ 85%]
+tests/test_game_logic.py::test_extremely_large_guess_is_too_high PASSED [100%]
+
+================== 7 passed in 0.31s ==================
+```
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, describe the Enhanced UI changes here — a screenshot is optional]

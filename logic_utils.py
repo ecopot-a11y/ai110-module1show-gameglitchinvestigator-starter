@@ -2,15 +2,19 @@ def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
     raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
 
-
+# FIX: Refactored parse_guess into logic_utils.py after AI-assisted edge-case testing.
 def parse_guess(raw: str):
     """
     Parse user input into an int guess.
 
     Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
-
+    try:
+        guess_int = int(float(raw))
+        return True, guess_int, None
+    except (ValueError, TypeError):
+        return False, None, "Please enter a valid number."
+    
 # FIX: Refactored check_guess logic into logic_utils.py with AI assistance.
 def check_guess(guess, secret):
     """

@@ -1,0 +1,10 @@
+[33m6c33587[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m fix: refactor guess logic and correct high-low hints
+[33mf651d72[m Merge pull request #92 from codepath/reflection-prompt-rejected-suggestion
+[33m1469004[m Reflection prompt: ask for a suggestion not accepted as written
+[33m2a6e424[m Merge pull request #58 from codepath/claude/add-ai-grading-scaffold
+[33m3fda1fc[m Use format-only placeholders in walkthrough to avoid content hints
+[33m7ceea0b[m Use generic walkthrough prompts to avoid hinting at specific bugs/fixes
+[33m8f75940[m Make screenshot optional alongside required demo walkthrough
+[33m12cd0c9[m Add AI grading scaffold: ai_interactions.md, bug log table, demo walkthrough, test results
+[33md281452[m Update reflection.md
+[33mde8179d[m Update README to include emoji in section header

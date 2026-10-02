@@ -25,19 +25,22 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] **Game Purpose:** The purpose of the game is for the user to guess a randomly generated secret number within a limited number of attempts. The game provides feedback after each guess, keeps track of the player's score and attempts, and tells the player whether the guess was too high, too low, or correct.
+
+- [x] **Bugs Found:** I found several bugs while investigating the starter application. The HIGHER/LOWER hints were reversed, so a guess that was too high could tell the player to go higher. I also found that the secret number was converted between an integer and a string on alternating attempts, which caused inconsistent comparisons. I also identified an inconsistency between the displayed difficulty range and the range used when starting a new game.
+
+- [x] **Fixes Applied:** I used AI assistance to identify and debug the problems and refactored the `check_guess()` game logic into `logic_utils.py`. I corrected the high/low behavior so the core logic returns `Too High`, `Too Low`, or `Win`, while `app.py` displays the appropriate HIGHER or LOWER message. I also removed the alternating string conversion so the secret remains an integer during comparisons. Finally, I added a pytest boundary test and used the existing starter tests to verify the refactored logic.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. The user starts a new game and the application generates a secret number. For this example, assume the secret number is `50`.
+2. The user enters `40`. The game returns `Too Low` and the hint correctly tells the user to go `HIGHER`.
+3. The user enters `60`. The game returns `Too High` and the hint correctly tells the user to go `LOWER`.
+4. After each guess, the application updates the player's attempts and score while keeping the same secret number for comparison.
+5. The user enters `50`. The game returns `Win`, displays the successful result, and ends the game.
+6. The repaired `check_guess()` logic was also verified with pytest, including a boundary test confirming that a guess of `51` against a secret of `50` returns `Too High`.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
@@ -48,6 +51,9 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
 ```
+
+python -m pytest -v
+4 passed
 
 ## 🚀 Stretch Features
 
